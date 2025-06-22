@@ -1024,7 +1024,32 @@ section,
  
 }
 
+@media (max-width: 767px) {
+  /* Disable hover effects */
+  .services .service-item:hover {
+    transform: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+  }
 
+  .services .service-item:hover .service-img {
+    transform: none;
+  }
+
+  .services .service-item:hover h3::after {
+    width: 0;
+  }
+
+  .view-details-btn:hover {
+    background-color: var(--accent-color, #0dcaf0); /* Keep original on mobile */
+  }
+
+  /* Hide title on mobile */
+  .services .service-item h3,
+  .services .service-item p {
+    display: none;
+  }
+}
 
 
 
@@ -1156,15 +1181,6 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
-
-
 
 /*portfolio details design */
 /* Center Swiper images */
