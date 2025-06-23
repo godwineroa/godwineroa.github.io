@@ -1054,133 +1054,105 @@ section,
 
 
 /*--------------------------------------------------------------
-# Service Details Section
+# Service Details Section - Enhanced Design
 --------------------------------------------------------------*/
+/* Base box styling */
 .service-details .service-box {
-  padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background-color: #0d1b2a; /* Dark blue background */
+  border-radius: 12px;
+  color: #f0f4f8;
+  border: 1px solid rgba(79, 195, 247, 0.25); /* Subtle cyan border */
+  box-shadow: 0 2px 10px rgba(13, 27, 42, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.service-details .service-box+.service-box {
-  margin-top: 30px;
+.service-details .service-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 16px rgba(79, 195, 247, 0.4); /* Light glow */
+  border-color: rgba(79, 195, 247, 0.45); /* Slightly brighter on hover */
 }
+
 
 .service-details .service-box h4 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+  border-bottom: 2px solid color-mix(in srgb, #4fc3f7, transparent 80%);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  color: #ffffff;
 }
 
-.service-details .services-list a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-top: 15px;
-  transition: 0.3s;
-}
 
-.service-details .services-list a:first-child {
-  margin-top: 0;
-}
-
-.service-details .services-list a i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .services-list a.active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.service-details .services-list a.active i {
-  color: var(--contrast-color);
-}
-
-.service-details .services-list a:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a {
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.service-details .download-catalog a:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.service-details .download-catalog a:last-child {
-  padding-bottom: 0;
-}
-
-.service-details .download-catalog a i {
-  font-size: 24px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a:hover {
-  color: var(--accent-color);
-}
-
-.service-details .help-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+.service-details .service-box + .service-box {
   margin-top: 30px;
-  padding: 30px 15px;
 }
 
-.service-details .help-box .help-icon {
-  font-size: 48px;
-}
-
-.service-details .help-box h4,
-.service-details .help-box a {
-  color: var(--contrast-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
+/* CERTIFICATE INFO — no checkmarks */
+.service-details .certificate-info {
   list-style: none;
   padding: 0;
-  font-size: 15px;
+  margin: 0;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
 }
 
-.service-details ul li {
-  padding: 5px 0;
+.service-details .certificate-info li {
+  padding: 6px 0;
+  line-height: 1.6;
+}
+
+/* SKILLS LIST — with checkmarks */
+.service-details .services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.service-details .services-list li {
   display: flex;
-  align-items: center;
+  align-items: start;
+  padding: 10px 0;
+  padding-left: 28px;
+  position: relative;
+  line-height: 1.6;
 }
 
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
+.service-details .services-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font-size: 16px;
+  color: var(--accent-color, #007bff);
 }
+
+/* Shared link style */
+.service-details a {
+  color: var(--accent-color, #007bff);
+  text-decoration: underline;
+  word-break: break-word;
+  transition: 0.3s ease;
+}
+
+.service-details a:hover {
+  color: #0056b3;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+/* Optional: certificate subsection heading */
+.service-details .certificate-info h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+
+
 
 /*portfolio details design */
 /* Center Swiper images */
